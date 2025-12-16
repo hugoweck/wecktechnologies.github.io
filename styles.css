@@ -8,6 +8,21 @@
   --accent: #7c9bff;
 }
 
+html, body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+header, main, footer, section, article, .card, .hero, .container {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+.card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -47,12 +62,49 @@ a:focus-visible {
   padding: 32px 24px 48px;
 }
 
-.top-nav {
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-inner nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0 12px;
+  gap: 20px;
+}
+
+.top-header a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.top-header a:hover,
+.top-header a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: none;
+}
+
+.top-header .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .logo {
@@ -84,7 +136,7 @@ a:focus-visible {
 }
 
 .nav-links a {
-  color: var(--muted);
+  color: inherit;
   font-weight: 600;
   padding: 8px 10px;
   border-radius: 10px;
@@ -93,9 +145,9 @@ a:focus-visible {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--text);
-  border-color: var(--border);
-  background: var(--surface);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #111a33;
 }
 
 .hero {
@@ -259,9 +311,13 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
+  .nav-inner {
+    padding: 12px 18px;
+  }
+
+  .nav-inner nav {
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .container {

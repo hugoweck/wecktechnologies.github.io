@@ -8,21 +8,23 @@
 </head>
 <body>
   <div class="site">
-    <header>
-      <div class="container">
-        <nav class="top-nav" aria-label="Huvudnavigation">
-          <a class="logo" href="index.html" aria-label="Weck Technologies startsida">
-            <span class="logo-mark">W</span>
-            <span>Weck Technologies</span>
-          </a>
-          <div class="nav-links">
-            <a href="#tjanster">Tjänster</a>
-            <a href="#om-oss">Om oss</a>
-            <a href="/integritetspolicy.html">Integritetspolicy</a>
-            <a href="mailto:contact@wecktechnologies.com">Kontakt</a>
-          </div>
+    <header class="top-header" aria-label="Huvudnavigation">
+      <div class="nav-inner">
+        <a class="logo" href="/index.html" aria-label="Weck Technologies startsida">
+          <span class="logo-mark">W</span>
+          <span>Weck Technologies</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html#tjanster">Tjänster</a>
+          <a href="/index.html#om-oss">Om oss</a>
+          <a href="/integritetspolicy.html">Integritetspolicy</a>
+          <a href="mailto:contact@wecktechnologies.com">Kontakt</a>
         </nav>
+      </div>
+    </header>
 
+    <main aria-label="Huvudinnehåll" class="section-stack">
+      <div class="container">
         <div class="hero" id="tjanster">
           <div class="badge">AI-receptionist för företag · Weck Technologies</div>
           <h1>AI-driven digital receptionist för företag</h1>
@@ -62,60 +64,58 @@
             </ul>
           </div>
         </div>
+
+        <section class="grid two-col" aria-label="Fördelar och målgrupper">
+          <article class="card">
+            <h2>Fördelar</h2>
+            <ul class="list">
+              <li>
+                <span>🎨</span>
+                <span>
+                  <strong>Anpassning</strong>
+                  Vi tränar AI:n på era företagstexter, era tjänster och ert språk.
+                </span>
+              </li>
+              <li>
+                <span>🔗</span>
+                <span>
+                  <strong>Integration</strong>
+                  Chatten installeras på er hemsida. Bokning, mejl och API kopplas på.
+                </span>
+              </li>
+              <li>
+                <span>🚀</span>
+                <span>
+                  <strong>Drift</strong>
+                  AI-receptionisten är igång dygnet runt med 99,99 % upptid och är klar på 5 minuter.
+                </span>
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h2>Vem passar det för?</h2>
+            <ul class="list">
+              <li><span>🏢</span><span>Små och medelstora företag</span></li>
+              <li><span>📞</span><span>Företag med kundsupport eller bokning</span></li>
+              <li><span>🔁</span><span>Företag med återkommande kundfrågor</span></li>
+              <li><span>📈</span><span>Företag som vill öka antal leads via webben</span></li>
+              <li><span>🧩</span><span>Företag som vill avbelasta deras kundserviceavdelning</span></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="card cta" aria-label="Kontakt och information">
+          <div class="cta-copy">
+            <h2>Redo att modernisera kundservice med AI?</h2>
+            <p>Vi hjälper företag att svara snabbare, minska manuellt arbete och ge ett starkare första intryck — utan att tappa den personliga känslan. Skicka ett mejl så berättar vi vad som passar just er.</p>
+            <a class="button primary" href="mailto:contact@wecktechnologies.com">Kontakta oss: contact@wecktechnologies.com</a>
+          </div>
+          <div id="om-oss">
+            <div class="label">Om Weck Technologies</div>
+            <p>Vi utvecklar praktiska AI-lösningar för företag i alla storlekar. Vårt fokus ligger på automatisering, kundservice och första intrycket.</p>
+          </div>
+        </section>
       </div>
-    </header>
-
-    <main class="container section-stack" aria-label="Huvudinnehåll">
-      <section class="grid two-col" aria-label="Fördelar och målgrupper">
-        <article class="card">
-          <h2>Fördelar</h2>
-          <ul class="list">
-            <li>
-              <span>🎨</span>
-              <span>
-                <strong>Anpassning</strong>
-                Vi tränar AI:n på era företagstexter, era tjänster och ert språk.
-              </span>
-            </li>
-            <li>
-              <span>🔗</span>
-              <span>
-                <strong>Integration</strong>
-                Chatten installeras på er hemsida. Bokning, mejl och API kopplas på.
-              </span>
-            </li>
-            <li>
-              <span>🚀</span>
-              <span>
-                <strong>Drift</strong>
-                AI-receptionisten är igång dygnet runt med 99,99 % upptid och är klar på 5 minuter.
-              </span>
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Vem passar det för?</h2>
-          <ul class="list">
-            <li><span>🏢</span><span>Små och medelstora företag</span></li>
-            <li><span>📞</span><span>Företag med kundsupport eller bokning</span></li>
-            <li><span>🔁</span><span>Företag med återkommande kundfrågor</span></li>
-            <li><span>📈</span><span>Företag som vill öka antal leads via webben</span></li>
-            <li><span>🧩</span><span>Företag som vill avbelasta deras kundserviceavdelning</span></li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="card cta" aria-label="Kontakt och information">
-        <div class="cta-copy">
-          <h2>Redo att modernisera kundservice med AI?</h2>
-          <p>Vi hjälper företag att svara snabbare, minska manuellt arbete och ge ett starkare första intryck — utan att tappa den personliga känslan. Skicka ett mejl så berättar vi vad som passar just er.</p>
-          <a class="button primary" href="mailto:contact@wecktechnologies.com">Kontakta oss: contact@wecktechnologies.com</a>
-        </div>
-        <div id="om-oss">
-          <div class="label">Om Weck Technologies</div>
-          <p>Vi utvecklar praktiska AI-lösningar för företag i alla storlekar. Vårt fokus ligger på automatisering, kundservice och första intrycket.</p>
-        </div>
-      </section>
     </main>
 
     <footer aria-label="Sidfot">
