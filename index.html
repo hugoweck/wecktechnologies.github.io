@@ -4,133 +4,276 @@
   <meta charset="utf-8">
   <title>Weck Technologies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --primary: #2f54eb;
+      --primary-contrast: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 0 88px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, rgba(47, 84, 235, 0.08), transparent 35%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e5ecff;
+      color: #1e3a8a;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 42px);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 18px 60px rgba(20, 26, 56, 0.06);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .two-col {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--primary-contrast);
+      box-shadow: 0 12px 30px rgba(47, 84, 235, 0.35);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text);
+    }
+
+    .list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: #eef2ff;
+      color: #312e81;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    footer a {
+      color: #cbd5f5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 28px 18px 72px;
+      }
+
+      footer {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="site">
+  <div class="page">
     <header>
-      <div class="container">
-        <nav class="top-nav" aria-label="Huvudnavigation">
-          <a class="logo" href="index.html" aria-label="Weck Technologies startsida">
-            <span class="logo-mark">W</span>
-            <span>Weck Technologies</span>
-          </a>
-          <div class="nav-links">
-            <a href="#tjanster">Tjänster</a>
-            <a href="#om-oss">Om oss</a>
-            <a href="/integritetspolicy.html">Integritetspolicy</a>
-            <a href="mailto:contact@wecktechnologies.com">Kontakt</a>
-          </div>
-        </nav>
-
-        <div class="hero" id="tjanster">
-          <div class="badge">AI-receptionist för företag · Weck Technologies</div>
-          <h1>AI-driven digital receptionist för företag</h1>
-          <p>Vi hjälper företag att svara kunder dygnet runt. Med en AI-receptionist som bokar, guidar och avlastar personalen.</p>
-          <div class="card" aria-label="Vad vi gör">
-            <h2>Vad vi gör</h2>
-            <p>Weck Technologies utvecklar intelligenta chatbotbaserade receptionister som:</p>
-            <ul class="list" aria-label="Exempel på tjänster">
-              <li>
-                <span>💬</span>
-                <span>
-                  <strong>Svarar på vanliga frågor</strong>
-                  Ger snabba svar på återkommande frågor.
-                </span>
-              </li>
-              <li>
-                <span>📲</span>
-                <span>
-                  <strong>Guidar kunder rätt</strong>
-                  Styr kunder till rätt kontaktvägar och bokningar.
-                </span>
-              </li>
-              <li>
-                <span>🧠</span>
-                <span>
-                  <strong>Hanterar komplexa ärenden</strong>
-                  Kan förstå och behandla kundbehov med flera steg.
-                </span>
-              </li>
-              <li>
-                <span>⚡</span>
-                <span>
-                  <strong>Prioriterar och fördelar</strong>
-                  Hjälper personalen att sortera och fördela ärenden till rätt plats.
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="badge">AI-receptionist för företag · <span style="color:#111827;">Weck Technologies</span></div>
+      <h1>AI-driven digital receptionist för företag</h1>
+      <p>Vi hjälper företag att svara kunder dygnet runt. Med en AI-receptionist som bokar, guidar och avlastar personalen.</p>
+      <div class="card" aria-label="Vad vi gör">
+        <h2 class="section-title">Vad vi gör</h2>
+        <p>Weck Technologies utvecklar intelligenta chatbotbaserade receptionister som:</p>
+        <ul class="list" aria-label="Exempel på tjänster">
+          <li>
+            <span>💬</span>
+            <span><strong>Svarar på vanliga frågor</strong>Ger snabba svar på återkommande frågor.</span>
+          </li>
+          <li>
+            <span>📲</span>
+            <span><strong>Guidar kunder rätt</strong>Styr kunder till rätt kontaktvägar och bokningar.</span>
+          </li>
+          <li>
+            <span>🧠</span>
+            <span><strong>Hanterar komplexa ärenden</strong>Kan förstå och behandla kundbehov med flera steg.</span>
+          </li>
+          <li>
+            <span>⚡</span>
+            <span><strong>Prioriterar och fördelar</strong>Hjälper personalen först till rätt ärende.</span>
+          </li>
+        </ul>
       </div>
     </header>
 
-    <main class="container section-stack" aria-label="Huvudinnehåll">
-      <section class="grid two-col" aria-label="Fördelar och målgrupper">
-        <article class="card">
-          <h2>Fördelar</h2>
-          <ul class="list">
-            <li>
-              <span>🎨</span>
-              <span>
-                <strong>Anpassning</strong>
-                Vi tränar AI:n på era företagstexter, era tjänster och ert språk.
-              </span>
-            </li>
-            <li>
-              <span>🔗</span>
-              <span>
-                <strong>Integration</strong>
-                Chatten installeras på er hemsida. Bokning, mejl och API kopplas på.
-              </span>
-            </li>
-            <li>
-              <span>🚀</span>
-              <span>
-                <strong>Drift</strong>
-                AI-receptionisten är igång dygnet runt med 99,99 % upptid och är klar på 5 minuter.
-              </span>
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Vem passar det för?</h2>
-          <ul class="list">
-            <li><span>🏢</span><span>Små och medelstora företag</span></li>
-            <li><span>📞</span><span>Företag med kundsupport eller bokning</span></li>
-            <li><span>🔁</span><span>Företag med återkommande kundfrågor</span></li>
-            <li><span>📈</span><span>Företag som vill öka antal leads via webben</span></li>
-            <li><span>🧩</span><span>Företag som vill avbelasta deras kundserviceavdelning</span></li>
-          </ul>
-        </article>
-      </section>
+    <section class="grid two-col" aria-label="Fördelar och målgrupper">
+      <article class="card">
+        <h2 class="section-title">Fördelar</h2>
+        <ul class="list">
+          <li>
+            <span>🎨</span>
+            <span><strong>Anpassning</strong>Vi tränar AI:n på era företagstexter, era tjänster och ert språk.</span>
+          </li>
+          <li>
+            <span>🔗</span>
+            <span><strong>Integration</strong>Chatten installerad på er hemsida. Bokning, mail och API anpassas.</span>
+          </li>
+          <li>
+            <span>🚀</span>
+            <span><strong>Drift</strong>AI-receptionisten är dygnet runt, 99.99% uppe 5 minuter från start.</span>
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2 class="section-title">Vem passar det för?</h2>
+        <ul class="list">
+          <li><span>🏢</span><span>Små och medelstora företag</span></li>
+          <li><span>📞</span><span>Företag med kundsupport eller bokning</span></li>
+          <li><span>🔁</span><span>Företag med återkommande kundfrågor</span></li>
+          <li><span>📈</span><span>Företag som vill öka antal leads via webben</span></li>
+          <li><span>🧩</span><span>Företag som vill avbelasta deras kundserviceavdelning</span></li>
+        </ul>
+      </article>
+    </section>
 
-      <section class="card cta" aria-label="Kontakt och information">
-        <div class="cta-copy">
-          <h2>Redo att modernisera kundservice med AI?</h2>
-          <p>Vi hjälper företag att svara snabbare, minska manuellt arbete och ge ett starkare första intryck — utan att tappa den personliga känslan. Skicka ett mejl så berättar vi vad som passar just er.</p>
-          <a class="button primary" href="mailto:contact@wecktechnologies.com">Kontakta oss: contact@wecktechnologies.com</a>
+    <section class="card" style="margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: center;">
+      <div>
+        <h2 class="section-title" style="margin-bottom: 6px;">Vad går vi igenom?</h2>
+        <p>Vi lär känna er verksamhet och identifierar vilka delar en AI-receptionist kan avlasta.</p>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:kontakt@wecktechnologies.se">Kontakta oss</a>
+          <a class="button" href="https://calendly.com" target="_blank" rel="noopener">Boka en demo</a>
         </div>
-        <div id="om-oss">
-          <div class="label">Om Weck Technologies</div>
-          <p>Vi utvecklar praktiska AI-lösningar för företag i alla storlekar. Vårt fokus ligger på automatisering, kundservice och första intrycket.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer aria-label="Sidfot">
-      <div class="footer-content">
-        <span>© <span id="year"></span> Weck Technologies</span>
-        <a href="/integritetspolicy.html" aria-label="Integritetspolicy">Integritetspolicy</a>
-        <a href="#om-oss" aria-label="Om oss">Om oss</a>
-        <a href="mailto:contact@wecktechnologies.com" aria-label="Kontakta oss">Kontakta oss</a>
       </div>
-    </footer>
+      <div>
+        <div class="label">Om Weck Technologies</div>
+        <p style="margin-top: 12px; color: var(--muted);">Vi utvecklar praktiska AI-lösningar för företag i alla storlekar. Vår fokus ligger på automatisering, kundservice och första intrycket.</p>
+      </div>
+    </section>
   </div>
 
-  <!-- BuildMyAgent: Lägg till ditt inbäddningsscript här vid behov. Exempel:
-       <script src="https://example.com/agent.js"></script>
-  -->
+  <footer aria-label="Sidfot">
+    <span>© <span id="year"></span> Weck Technologies</span>
+    <a href="#" aria-label="Sekretesspolicy">Policy</a>
+    <a href="#" aria-label="Om oss">Om oss</a>
+    <a href="mailto:kontakt@wecktechnologies.se" aria-label="Kontakta oss">Kontakta oss</a>
+  </footer>
+
+  <!-- BuildMyAgent -->
+  <script src="DIN_BUILDMYAGENT_SCRIPT"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
