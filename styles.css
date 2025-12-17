@@ -285,6 +285,33 @@ p {
   color: var(--text);
 }
 
+.icon-dot,
+.list li > span:first-child {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(138, 164, 255, 0.28), rgba(138, 164, 255, 0.08));
+  border: 1px solid rgba(138, 164, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 16px rgba(0, 0, 0, 0.35);
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.icon-dot::after,
+.list li > span:first-child::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cfd9ff;
+  box-shadow: 0 0 16px rgba(138, 164, 255, 0.9);
+}
+
 .list strong {
   display: block;
   margin-bottom: 4px;
