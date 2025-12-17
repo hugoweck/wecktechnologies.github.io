@@ -280,8 +280,7 @@ p {
 
 .list li {
   display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 10px;
+  gap: 6px;
   align-items: flex-start;
   color: var(--text);
 }
