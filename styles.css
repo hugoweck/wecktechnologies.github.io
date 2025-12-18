@@ -1,4 +1,5 @@
 :root{
+  /* Light page (professional frame) */
   --page-bg:#f4f6fb;
   --page-bg-2:#ffffff;
 
@@ -9,12 +10,14 @@
 
   --border:#e5e7eb;
 
-  /* Dark surfaces (used inside hero + dark cards) */
+  /* Dark surfaces (used for “cool” cards/hero) */
   --dark-surface:#0c1325;
   --dark-surface-2:#0a1021;
+  --dark-text:#e9eeff;
+  --dark-muted:#d5def9;
+  --dark-border:rgba(255,255,255,0.10);
 }
 
-/* Reset */
 *{ box-sizing:border-box; }
 
 html,body{
@@ -25,7 +28,6 @@ html,body{
   line-height:1.7;
 }
 
-/* Links */
 a{
   color:var(--accent);
   text-decoration:none;
@@ -91,7 +93,7 @@ a:hover,a:focus-visible{
 
 .top-header a:hover,
 .top-header a:focus-visible{
-  color:#000000;
+  color:#000;
   text-decoration:underline;
 }
 
@@ -135,7 +137,124 @@ a:hover,a:focus-visible{
   background:rgba(79,107,255,.06);
 }
 
-/* Hero */
+/* Typography */
+h1{
+  margin:0;
+  font-size:clamp(34px,5vw,46px);
+  letter-spacing:-0.02em;
+}
+h2{
+  margin:0 0 8px;
+  font-size:24px;
+  letter-spacing:-0.01em;
+}
+p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* Cards (light default) */
+.card{
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 18px 40px rgba(17,24,39,0.10);
+  color:var(--text);
+}
+
+/* Grid sections */
+.grid{ display:grid; gap:16px; }
+.two-col{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+
+/* Lists */
+.list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+.list li{
+  display:grid;
+  gap:6px;
+  align-items:flex-start;
+  color:inherit;
+}
+.list strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+/* “No emoji markers” visuals */
+.icon-dot,
+.list li > span:first-child{
+  width:32px;
+  height:32px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, rgba(79,107,255,0.22), rgba(79,107,255,0.08));
+  border:1px solid rgba(79,107,255,0.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 16px rgba(17,24,39,0.16);
+  position:relative;
+  font-size:0;
+  line-height:0;
+  color:transparent;
+}
+.icon-dot::after,
+.list li > span:first-child::after{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#cfd9ff;
+  box-shadow:0 0 16px rgba(79,107,255,0.55);
+}
+
+/* Label chip */
+.label{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 12px;
+  background:rgba(79,107,255,0.10);
+  color:#1b2a60;
+  border-radius:10px;
+  font-weight:800;
+}
+
+/* Buttons */
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#ffffff;
+  color:var(--text);
+  font-weight:800;
+  text-decoration:none;
+  transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.button:hover,
+.button:focus-visible{
+  transform:translateY(-1px);
+  border-color:rgba(79,107,255,0.35);
+  box-shadow:0 12px 26px rgba(17,24,39,0.12), 0 1px 0 rgba(255,255,255,0.55) inset;
+  outline:none;
+}
+.button.primary{
+  background:linear-gradient(135deg,#4f6bff,#7c9bff);
+  border-color:transparent;
+  color:#0b1221;
+  box-shadow:0 10px 24px rgba(17,24,39,0.18), 0 1px 0 rgba(255,255,255,0.18) inset;
+}
+
+/* ===== HERO (cool background) ===== */
 .hero{
   position:relative;
   padding:40px 32px 44px;
@@ -167,10 +286,7 @@ a:hover,a:focus-visible{
   z-index:0;
 }
 
-.hero > *{
-  position:relative;
-  z-index:1;
-}
+.hero > *{ position:relative; z-index:1; }
 
 .badge{
   display:inline-flex;
@@ -185,54 +301,26 @@ a:hover,a:focus-visible{
   box-shadow:0 0 0 1px rgba(255,255,255,0.18), 0 12px 28px rgba(0,0,0,0.22);
 }
 
-h1{
-  margin:0;
-  font-size:clamp(34px,5vw,46px);
-  letter-spacing:-0.02em;
+.hero h1{
   color:#f3f6ff;
   text-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
-h2{
-  margin:0 0 8px;
-  font-size:24px;
-  letter-spacing:-0.01em;
-}
+.hero p{ color:var(--dark-muted); }
 
-.hero p{
-  margin:0;
-  color:#d5def9;
-}
-
-/* Cards (light default) */
-.card{
-  background:#ffffff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 18px 40px rgba(17,24,39,0.10);
-  color:var(--text);
-}
-
-/* Hero cards should remain dark */
+/* Hero cards */
 .hero .card{
   text-align:left;
-  margin:0;
-  width:100%;
-  max-width:none;
   background:rgba(12,19,37,0.88);
-  color:#e9eeff;
+  color:var(--dark-text);
   border:1px solid rgba(255,255,255,0.10);
   backdrop-filter:blur(8px);
   box-shadow:0 18px 48px rgba(0,0,0,0.35);
 }
 
 .hero .card p,
-.hero .card li{
-  color:#dbe6ff;
-}
+.hero .card li{ color:#dbe6ff; }
 
-/* Two cards in hero */
 .hero-cards{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -241,90 +329,75 @@ h2{
   margin-top:12px;
 }
 
-.hero-cards .card{
-  width:100%;
-  max-width:none;
-  margin:0;
-}
+.hero-cards .card{ width:100%; max-width:none; margin:0; }
 
-/* Pain card variant */
 .pain-card{
   background:linear-gradient(170deg, rgba(5,9,20,0.96), rgba(10,16,33,0.92)) !important;
   border-color:rgba(255,255,255,0.08) !important;
 }
 
-/* Grid sections */
-.grid{
-  display:grid;
-  gap:16px;
-}
-
-.two-col{
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-}
-
-/* Lists */
-.list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:grid;
-  gap:14px;
-}
-
-.list li{
-  display:grid;
-  gap:6px;
-  align-items:flex-start;
-  color:inherit;
-}
-
-/* “No emoji markers” visuals */
-.icon-dot,
-.list li > span:first-child{
-  width:32px;
-  height:32px;
-  border-radius:12px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg, rgba(79,107,255,0.22), rgba(79,107,255,0.08));
-  border:1px solid rgba(79,107,255,0.22);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 16px rgba(17,24,39,0.16);
+/* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
+/* 1) The two cards in the two-col grid (FAQ + target) */
+.grid.two-col > .card{
   position:relative;
-  font-size:0;
-  line-height:0;
-  color:transparent;
+  overflow:hidden;
+  background:rgba(12,19,37,0.88);
+  color:var(--dark-text);
+  border:1px solid rgba(255,255,255,0.10);
+  backdrop-filter:blur(8px);
+  box-shadow:0 18px 48px rgba(0,0,0,0.28);
 }
 
-.icon-dot::after,
-.list li > span:first-child::after{
+/* 2) The CTA big card */
+.card.cta{
+  position:relative;
+  overflow:hidden;
+  background:rgba(12,19,37,0.88);
+  color:var(--dark-text);
+  border:1px solid rgba(255,255,255,0.10);
+  backdrop-filter:blur(8px);
+  box-shadow:0 18px 48px rgba(0,0,0,0.28);
+}
+
+/* Add the same “cool background” INSIDE these cards */
+.grid.two-col > .card::before,
+.card.cta::before{
   content:"";
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:#cfd9ff;
-  box-shadow:0 0 16px rgba(79,107,255,0.55);
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(140deg, rgba(6,11,24,0.92) 0%, rgba(6,10,20,0.92) 36%, rgba(43,74,150,0.62) 70%, rgba(8,12,26,0.94) 100%),
+    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.22), transparent 34%),
+    url('dark-wave.png');
+  background-size:cover, auto, cover;
+  background-repeat:no-repeat, no-repeat, no-repeat;
+  background-position:center, center, center;
+  opacity:.85;
+  z-index:0;
 }
 
-.list strong{
-  display:block;
-  margin-bottom:4px;
+/* Keep text above background */
+.grid.two-col > .card > *,
+.card.cta > *{
+  position:relative;
+  z-index:1;
 }
 
-/* Labels */
-.label{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:9px 12px;
-  background:rgba(79,107,255,0.10);
-  color:#1b2a60;
-  border-radius:10px;
-  font-weight:800;
+/* Text colors inside dark lower cards */
+.grid.two-col > .card p,
+.grid.two-col > .card li,
+.card.cta p,
+.card.cta li{
+  color:#dbe6ff;
 }
 
-/* CTA */
+/* Make the little label chip work on dark card */
+.card.cta .label{
+  background:rgba(255,255,255,0.12);
+  color:#eef2ff;
+}
+
+/* CTA layout */
 .cta{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
@@ -336,37 +409,6 @@ h2{
 .cta-copy{
   display:grid;
   gap:10px;
-}
-
-/* Buttons */
-.button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 18px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:#ffffff;
-  color:var(--text);
-  font-weight:800;
-  text-decoration:none;
-  transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.button:hover,
-.button:focus-visible{
-  transform:translateY(-1px);
-  border-color:rgba(79,107,255,0.35);
-  box-shadow:0 12px 26px rgba(17,24,39,0.12), 0 1px 0 rgba(255,255,255,0.55) inset;
-  outline:none;
-}
-
-.button.primary{
-  background:linear-gradient(135deg,#4f6bff,#7c9bff);
-  border-color:transparent;
-  color:#0b1221;
-  box-shadow:0 10px 24px rgba(17,24,39,0.18), 0 1px 0 rgba(255,255,255,0.18) inset;
 }
 
 /* Footer */
@@ -392,7 +434,6 @@ footer{
   color:var(--muted);
   font-weight:800;
 }
-
 .footer-content a:hover,
 .footer-content a:focus-visible{
   color:var(--text);
