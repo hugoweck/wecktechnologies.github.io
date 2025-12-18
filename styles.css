@@ -1,29 +1,32 @@
 :root{
-  /* Light page (professional frame) */
-  --page-bg:#f4f6fb;
-  --page-bg-2:#ffffff;
+  --page:#f6f7fb;
+  --page-2:#ffffff;
 
-  --text:#0b1221;
-  --muted:#44506b;
+  --ink:#0b1221;
+  --muted:#5b667a;
+
+  --card:#0b1221;
+  --card2:#0a1021;
+
+  --glass:rgba(12,19,37,.82);
+  --glass2:rgba(12,19,37,.72);
+
+  --border:rgba(255,255,255,.10);
+  --border2:rgba(0,0,0,.08);
 
   --accent:#4f6bff;
+  --accent2:#7c9bff;
 
-  --border:#e5e7eb;
-
-  /* Dark surfaces (used for “cool” cards/hero) */
-  --dark-surface:#0c1325;
-  --dark-surface-2:#0a1021;
-  --dark-text:#e9eeff;
-  --dark-muted:#d5def9;
-  --dark-border:rgba(255,255,255,0.10);
+  --radius:22px;
 }
 
-*{ box-sizing:border-box; }
+*{box-sizing:border-box}
 
 html,body{
   margin:0;
-  background:var(--page-bg);
-  color:var(--text);
+  padding:0;
+  background:var(--page);
+  color:var(--ink);
   font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
   line-height:1.7;
 }
@@ -31,33 +34,22 @@ html,body{
 a{
   color:var(--accent);
   text-decoration:none;
-  transition:color .2s ease, opacity .2s ease;
+  transition:color .2s ease, opacity .2s ease, transform .12s ease;
 }
-a:hover,a:focus-visible{
-  color:#2f4bff;
-  outline:none;
-}
+a:hover,a:focus-visible{color:#2f52ff; outline:none}
 
-/* Page shell */
 .site{
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  position:relative;
-  background:linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-2) 55%, var(--page-bg) 100%);
+  background:linear-gradient(180deg,var(--page) 0%, var(--page-2) 55%, var(--page) 100%);
 }
 
-/* Layout container */
 .container{
   width:100%;
   max-width:1100px;
   margin:0 auto;
   padding:32px 24px 48px;
-}
-
-.section-stack{
-  display:grid;
-  gap:18px;
 }
 
 /* Header */
@@ -66,8 +58,7 @@ a:hover,a:focus-visible{
   top:0;
   z-index:1000;
   background:#ffffff;
-  border-bottom:1px solid var(--border);
-  backdrop-filter:saturate(1.2) blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.07);
 }
 
 .nav-inner{
@@ -83,18 +74,19 @@ a:hover,a:focus-visible{
 .nav-inner nav{
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 .top-header a{
-  color:#111827;
+  color:#0b1221;
   font-weight:700;
+  padding:8px 10px;
+  border-radius:10px;
 }
-
 .top-header a:hover,
 .top-header a:focus-visible{
-  color:#000;
-  text-decoration:underline;
+  background:rgba(79,107,255,.08);
 }
 
 .logo{
@@ -102,72 +94,132 @@ a:hover,a:focus-visible{
   align-items:center;
   gap:10px;
   font-weight:800;
-  letter-spacing:-0.02em;
-  color:#0b1221;
+  letter-spacing:-.02em;
 }
 
 .logo-mark{
   width:34px;
   height:34px;
   border-radius:12px;
-  background:linear-gradient(135deg,#4f6bff,#7c9bff);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
   display:grid;
   place-items:center;
-  font-weight:800;
+  font-weight:900;
   font-size:16px;
   color:#0b1221;
-  box-shadow:0 10px 24px rgba(79,107,255,.22);
+  box-shadow:0 10px 24px rgba(79,107,255,.25);
 }
 
-.nav-links{
-  display:flex;
+.section-stack{
+  display:grid;
+  gap:18px; /* detta är “linjen/luften” mellan block */
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  padding:40px 32px 44px;
+  display:grid;
+  gap:22px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  color:#e9eeff;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 28px 70px rgba(0,0,0,.18);
+  isolation:isolate;
+
+  background-image:
+    linear-gradient(140deg, rgba(6, 11, 24, 0.94) 0%, rgba(6, 10, 20, 0.94) 36%, rgba(43, 74, 150, 0.72) 70%, rgba(8, 12, 26, 0.96) 100%),
+    url("dark-wave.png");
+  background-size:cover, cover;
+  background-position:center, center;
+  background-repeat:no-repeat, no-repeat;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 12%, rgba(255,255,255,.08), transparent 40%);
+  z-index:0;
+}
+
+.hero > *{position:relative; z-index:1}
+.hero p{color:#d5def9; text-align:center}
+
+.badge{
+  display:inline-flex;
   align-items:center;
-  gap:16px;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(138,164,255,.16);
+  color:#d4deff;
+  font-weight:800;
+  width:fit-content;
+  margin:0 auto;
+  box-shadow:0 0 0 1px rgba(138,164,255,.28), 0 12px 28px rgba(0,0,0,.24);
 }
 
-.nav-links a{
-  padding:8px 10px;
-  border-radius:10px;
-  border:1px solid transparent;
-}
-
-.nav-links a:hover,
-.nav-links a:focus-visible{
-  border-color:rgba(79,107,255,.25);
-  background:rgba(79,107,255,.06);
-}
-
-/* Typography */
 h1{
   margin:0;
+  text-align:center;
   font-size:clamp(34px,5vw,46px);
-  letter-spacing:-0.02em;
+  letter-spacing:-.02em;
+  text-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 26px rgba(138,164,255,.25);
 }
+
 h2{
   margin:0 0 8px;
   font-size:24px;
-  letter-spacing:-0.01em;
-}
-p{
-  margin:0;
-  color:var(--muted);
+  letter-spacing:-.01em;
 }
 
-/* Cards (light default) */
+p{margin:0;color:var(--muted)}
+
+/* Cards (standard = “coola” mörka kort) */
 .card{
-  background:#ffffff;
-  border:1px solid var(--border);
+  position:relative;
   border-radius:18px;
   padding:22px;
-  box-shadow:0 18px 40px rgba(17,24,39,0.10);
-  color:var(--text);
+  overflow:hidden;
+  color:#e9eeff;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(12,19,37,.82);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-/* Grid sections */
-.grid{ display:grid; gap:16px; }
-.two-col{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:url("dark-wave.png") center/cover no-repeat;
+  opacity:.28;
+  filter:saturate(1.1) contrast(1.05);
+  z-index:0;
+}
 
-/* Lists */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(124,155,255,.14), transparent 38%),
+    linear-gradient(160deg, rgba(0,0,0,.18), rgba(0,0,0,.28));
+  z-index:0;
+}
+
+.card > *{position:relative; z-index:1}
+
+.grid{display:grid; gap:16px}
+.two-col{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr))}
+
+/* VIKTIGT: skapa samma “vita linje/luft” mellan hero och raden under */
+.hero + section.grid.two-col{
+  margin-top:18px; /* matchar section-stack gap så det ser konsekvent ut */
+}
+
+/* Listor utan emojis/markers */
 .list{
   list-style:none;
   margin:0;
@@ -179,53 +231,24 @@ p{
   display:grid;
   gap:6px;
   align-items:flex-start;
-  color:inherit;
+  color:#e9eeff;
 }
 .list strong{
   display:block;
   margin-bottom:4px;
 }
 
-/* “No emoji markers” visuals */
-.icon-dot,
-.list li > span:first-child{
-  width:32px;
-  height:32px;
-  border-radius:12px;
-  display:inline-flex;
+/* CTA / knappar */
+.cta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:18px;
   align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg, rgba(79,107,255,0.22), rgba(79,107,255,0.08));
-  border:1px solid rgba(79,107,255,0.22);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 16px rgba(17,24,39,0.16);
-  position:relative;
-  font-size:0;
-  line-height:0;
-  color:transparent;
-}
-.icon-dot::after,
-.list li > span:first-child::after{
-  content:"";
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:#cfd9ff;
-  box-shadow:0 0 16px rgba(79,107,255,0.55);
+  margin-top:8px;
 }
 
-/* Label chip */
-.label{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:9px 12px;
-  background:rgba(79,107,255,0.10);
-  color:#1b2a60;
-  border-radius:10px;
-  font-weight:800;
-}
+.cta-copy{display:grid; gap:10px}
 
-/* Buttons */
 .button{
   display:inline-flex;
   align-items:center;
@@ -233,9 +256,9 @@ p{
   gap:10px;
   padding:12px 18px;
   border-radius:999px;
-  border:1px solid var(--border);
-  background:#ffffff;
-  color:var(--text);
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:#e9eeff;
   font-weight:800;
   text-decoration:none;
   transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
@@ -243,179 +266,57 @@ p{
 .button:hover,
 .button:focus-visible{
   transform:translateY(-1px);
-  border-color:rgba(79,107,255,0.35);
-  box-shadow:0 12px 26px rgba(17,24,39,0.12), 0 1px 0 rgba(255,255,255,0.55) inset;
+  border-color:rgba(124,155,255,.35);
+  box-shadow:0 12px 26px rgba(0,0,0,.16), 0 1px 0 rgba(255,255,255,.06) inset;
   outline:none;
 }
 .button.primary{
-  background:linear-gradient(135deg,#4f6bff,#7c9bff);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
   border-color:transparent;
   color:#0b1221;
-  box-shadow:0 10px 24px rgba(17,24,39,0.18), 0 1px 0 rgba(255,255,255,0.18) inset;
+  box-shadow:0 10px 24px rgba(0,0,0,.18), 0 1px 0 rgba(255,255,255,.10) inset;
 }
 
-/* ===== HERO (cool background) ===== */
-.hero{
-  position:relative;
-  padding:40px 32px 44px;
-  display:grid;
-  gap:22px;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,0.10);
-  text-align:center;
-
-  background-image:
-    linear-gradient(140deg, rgba(6,11,24,0.94) 0%, rgba(6,10,20,0.94) 36%, rgba(43,74,150,0.72) 70%, rgba(8,12,26,0.96) 100%),
-    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.28), transparent 34%),
-    url('dark-wave.png');
-  background-size:cover, auto, cover;
-  background-repeat:no-repeat, no-repeat, no-repeat;
-  background-position:center, center, center;
-  background-attachment:scroll, scroll, fixed;
-
-  overflow:hidden;
-  box-shadow:0 28px 70px rgba(0,0,0,.28);
-  isolation:isolate;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 50% 10%, rgba(255,255,255,0.10), transparent 40%);
-  z-index:0;
-}
-
-.hero > *{ position:relative; z-index:1; }
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.12);
-  color:#eef2ff;
-  font-weight:800;
+/* ---- GLOSS på “Prova kostnadsfritt i 14 dagar” ----
+   Targetar CTA-kortet (det har class="card cta") och dess H2.
+   Blir en “subtil highlight-chip” som drar ögat utan att skrika.
+*/
+.card.cta h2{
+  display:inline-block;
   width:fit-content;
-  box-shadow:0 0 0 1px rgba(255,255,255,0.18), 0 12px 28px rgba(0,0,0,0.22);
-}
-
-.hero h1{
-  color:#f3f6ff;
-  text-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-
-.hero p{ color:var(--dark-muted); }
-
-/* Hero cards */
-.hero .card{
-  text-align:left;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.35);
-}
-
-.hero .card p,
-.hero .card li{ color:#dbe6ff; }
-
-.hero-cards{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:18px;
-  align-items:start;
-  margin-top:12px;
-}
-
-.hero-cards .card{ width:100%; max-width:none; margin:0; }
-
-.pain-card{
-  background:linear-gradient(170deg, rgba(5,9,20,0.96), rgba(10,16,33,0.92)) !important;
-  border-color:rgba(255,255,255,0.08) !important;
-}
-
-/* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
-/* 1) The two cards in the two-col grid (FAQ + target) */
-.grid.two-col > .card{
+  padding:8px 12px;
+  border-radius:14px;
+  margin:-6px 0 6px;
+  background:linear-gradient(135deg,
+    rgba(255,255,255,.14) 0%,
+    rgba(124,155,255,.18) 45%,
+    rgba(255,255,255,.10) 100%);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.16);
   position:relative;
-  overflow:hidden;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.28);
 }
 
-/* 2) The CTA big card */
-.card.cta{
-  position:relative;
-  overflow:hidden;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.28);
-}
-
-/* Add the same “cool background” INSIDE these cards */
-.grid.two-col > .card::before,
-.card.cta::before{
+.card.cta h2::after{
   content:"";
   position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(140deg, rgba(6,11,24,0.92) 0%, rgba(6,10,20,0.92) 36%, rgba(43,74,150,0.62) 70%, rgba(8,12,26,0.94) 100%),
-    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.22), transparent 34%),
-    url('dark-wave.png');
-  background-size:cover, auto, cover;
-  background-repeat:no-repeat, no-repeat, no-repeat;
-  background-position:center, center, center;
-  opacity:.85;
-  z-index:0;
-}
-
-/* Keep text above background */
-.grid.two-col > .card > *,
-.card.cta > *{
-  position:relative;
-  z-index:1;
-}
-
-/* Text colors inside dark lower cards */
-.grid.two-col > .card p,
-.grid.two-col > .card li,
-.card.cta p,
-.card.cta li{
-  color:#dbe6ff;
-}
-
-/* Make the little label chip work on dark card */
-.card.cta .label{
-  background:rgba(255,255,255,0.12);
-  color:#eef2ff;
-}
-
-/* CTA layout */
-.cta{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  gap:18px;
-  align-items:center;
-  margin-top:8px;
-}
-
-.cta-copy{
-  display:grid;
-  gap:10px;
+  inset:-1px;
+  border-radius:14px;
+  background:linear-gradient(110deg,
+    transparent 0%,
+    rgba(255,255,255,.18) 30%,
+    transparent 60%);
+  opacity:.55; /* “glans” */
+  pointer-events:none;
+  mix-blend-mode:screen;
 }
 
 /* Footer */
 footer{
   background:#ffffff;
-  border-top:1px solid var(--border);
-  color:var(--muted);
+  border-top:1px solid rgba(0,0,0,.08);
+  color:#6b7280;
   margin-top:auto;
 }
 
@@ -431,32 +332,17 @@ footer{
 }
 
 .footer-content a{
-  color:var(--muted);
+  color:#4b5563;
   font-weight:800;
 }
 .footer-content a:hover,
 .footer-content a:focus-visible{
-  color:var(--text);
+  color:#111827;
 }
 
 /* Responsive */
-@media (max-width: 900px){
-  .hero-cards{ grid-template-columns:1fr; }
-}
-
 @media (max-width: 640px){
-  .nav-inner{ padding:12px 18px; }
-
-  .nav-inner nav{
-    gap:12px;
-    flex-wrap:wrap;
-  }
-
-  .container{ padding:24px 18px 40px; }
-
-  .hero{
-    padding:32px 22px 36px;
-    background-attachment:scroll, scroll, scroll;
-    background-position:center top;
-  }
+  .nav-inner{padding:12px 18px}
+  .container{padding:24px 18px 40px}
+  .hero{padding:32px 22px 36px}
 }
