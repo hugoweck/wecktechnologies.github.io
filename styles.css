@@ -166,6 +166,7 @@ p{
 /* Grid sections */
 .grid{ display:grid; gap:16px; }
 .two-col{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+.grid.two-col{ margin-top:18px; }
 
 /* Lists */
 .list{
