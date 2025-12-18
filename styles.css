@@ -324,7 +324,7 @@ p{
 
 .hero-cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:18px;
   align-items:start;
   margin-top:12px;
@@ -333,9 +333,8 @@ p{
 .hero-cards .card{ width:100%; max-width:none; margin:0; }
 
 .pain-card{
-  background:linear-gradient(180deg, rgba(5,8,18,0.96), rgba(9,14,30,0.92)), radial-gradient(circle at 10% 10%, rgba(79,107,255,0.10), transparent 40%);
-  border-color:rgba(255,255,255,0.14);
-  box-shadow:0 26px 70px rgba(0,0,0,0.40);
+  background:linear-gradient(170deg, rgba(5,9,20,0.96), rgba(10,16,33,0.92)) !important;
+  border-color:rgba(255,255,255,0.08) !important;
 }
 
 /* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
