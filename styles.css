@@ -405,7 +405,7 @@ p{
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
   gap:18px;
   align-items:center;
-  margin-top:8px;
+  margin-top:18px;
 }
 
 .cta-copy{
