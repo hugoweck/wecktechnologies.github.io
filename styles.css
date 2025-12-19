@@ -110,12 +110,9 @@ a:hover,a:focus-visible{
   width:34px;
   height:34px;
   border-radius:12px;
-  background:linear-gradient(135deg,#4f6bff,#7c9bff);
-  display:grid;
-  place-items:center;
-  font-weight:800;
-  font-size:16px;
-  color:#0b1221;
+  background:transparent;
+  display:block;
+  object-fit:contain;
   box-shadow:0 10px 24px rgba(79,107,255,.22);
 }
 
