@@ -68,12 +68,14 @@ a:hover,a:focus-visible{
   background:#ffffff;
   border-bottom:1px solid var(--border);
   backdrop-filter:saturate(1.2) blur(8px);
+  height:72px;
 }
 
 .nav-inner{
   max-width:1100px;
   margin:0 auto;
-  padding:14px 24px;
+  padding:0 24px;
+  height:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -108,10 +110,13 @@ a:hover,a:focus-visible{
 
 .logo-mark{
   width:34px;
-  height:34px;
+  height:auto;
+  max-height:40px;
   border-radius:12px;
   background:transparent;
   display:block;
+  margin:0;
+  padding:0;
   object-fit:contain;
   box-shadow:0 10px 24px rgba(79,107,255,.22);
 }
