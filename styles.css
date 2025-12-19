@@ -102,23 +102,21 @@ a:hover,a:focus-visible{
 .logo{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   font-weight:800;
   letter-spacing:-0.02em;
   color:#0b1221;
 }
 
-.logo-mark{
-  width:34px;
-  height:auto;
-  max-height:40px;
-  border-radius:12px;
-  background:transparent;
+.logo-img{
+  height:32px;
+  width:auto;
   display:block;
   margin:0;
   padding:0;
-  object-fit:contain;
-  box-shadow:0 10px 24px rgba(79,107,255,.22);
+  border-radius:0;
+  background:none;
+  box-shadow:none;
 }
 
 .nav-links{
