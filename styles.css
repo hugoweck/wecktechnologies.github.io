@@ -323,12 +323,21 @@ p{
 .hero .card p,
 .hero .card li{ color:#dbe6ff; }
 
-.hero .card .hero-highlight{
+.hero .card .hero-price{
+  color:#22c9bc;
+}
+
+.hero .card .hero-trial{
   color:#15b2d1;
 }
 
-.hero .card .hero-price{
-  color:#22c9bc;
+.hero .card .hero-trial .trial-gloss{
+  color:#15b2d1;
+  background:none;
+  -webkit-background-clip:initial;
+  background-clip:initial;
+  text-shadow:none;
+  animation:none;
 }
 
 .hero-cards{
@@ -357,6 +366,16 @@ p{
   border:1px solid rgba(255,255,255,0.10);
   backdrop-filter:blur(8px);
   box-shadow:0 18px 48px rgba(0,0,0,0.28);
+}
+
+.grid.two-col > .card-fit{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:1.12em;
+  line-height:1.8;
 }
 
 /* 2) The CTA big card */
