@@ -358,7 +358,8 @@ p{
 
 /* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
 /* 1) The two cards in the two-col grid (FAQ + target) */
-.grid.two-col > .card{
+.grid.two-col > .card,
+.grid.two-col .stack .card{
   position:relative;
   overflow:hidden;
   background:rgba(12,19,37,0.88);
@@ -371,7 +372,7 @@ p{
 .stack{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:0;
 }
 
 .contact-card{
@@ -398,6 +399,7 @@ p{
 
 /* Add the same “cool background” INSIDE these cards */
 .grid.two-col > .card::before,
+.grid.two-col .stack .card::before,
 .card.cta::before{
   content:"";
   position:absolute;
@@ -415,6 +417,7 @@ p{
 
 /* Keep text above background */
 .grid.two-col > .card > *,
+.grid.two-col .stack .card > *,
 .card.cta > *{
   position:relative;
   z-index:1;
@@ -423,6 +426,8 @@ p{
 /* Text colors inside dark lower cards */
 .grid.two-col > .card p,
 .grid.two-col > .card li,
+.grid.two-col .stack .card p,
+.grid.two-col .stack .card li,
 .card.cta p,
 .card.cta li{
   color:#dbe6ff;
