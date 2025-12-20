@@ -323,6 +323,14 @@ p{
 .hero .card p,
 .hero .card li{ color:#dbe6ff; }
 
+.hero .card .hero-highlight{
+  color:#15b2d1;
+}
+
+.hero .card .hero-price{
+  color:#22c9bc;
+}
+
 .hero-cards{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
