@@ -368,14 +368,21 @@ p{
   box-shadow:0 18px 48px rgba(0,0,0,0.28);
 }
 
-.grid.two-col > .card-fit{
+.stack{
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  font-size:1.12em;
-  line-height:1.8;
+  gap:16px;
+}
+
+.contact-card{
+  display:grid;
+  gap:12px;
+}
+
+.contact-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
 /* 2) The CTA big card */
