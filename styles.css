@@ -68,12 +68,14 @@ a:hover,a:focus-visible{
   background:#ffffff;
   border-bottom:1px solid var(--border);
   backdrop-filter:saturate(1.2) blur(8px);
+  height:72px;
 }
 
 .nav-inner{
   max-width:1100px;
   margin:0 auto;
-  padding:14px 24px;
+  padding:0 24px;
+  height:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -100,23 +102,21 @@ a:hover,a:focus-visible{
 .logo{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   font-weight:800;
   letter-spacing:-0.02em;
   color:#0b1221;
 }
 
-.logo-mark{
-  width:34px;
-  height:34px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#4f6bff,#7c9bff);
-  display:grid;
-  place-items:center;
-  font-weight:800;
-  font-size:16px;
-  color:#0b1221;
-  box-shadow:0 10px 24px rgba(79,107,255,.22);
+.logo-img{
+  height:64px;
+  width:auto;
+  display:block;
+  margin:0;
+  padding:0;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
 }
 
 .nav-links{
@@ -166,6 +166,7 @@ p{
 /* Grid sections */
 .grid{ display:grid; gap:16px; }
 .two-col{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+.grid.two-col{ margin-top:18px; }
 
 /* Lists */
 .list{
@@ -322,9 +323,26 @@ p{
 .hero .card p,
 .hero .card li{ color:#dbe6ff; }
 
+.hero .card .hero-price{
+  color:#22c9bc;
+}
+
+.hero .card .hero-trial{
+  color:#0bb3d9;
+}
+
+.hero .card .hero-trial .trial-gloss{
+  color:#0bb3d9;
+  background:none;
+  -webkit-background-clip:initial;
+  background-clip:initial;
+  text-shadow:none;
+  animation:none;
+}
+
 .hero-cards{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:18px;
   align-items:start;
   margin-top:12px;
@@ -333,8 +351,9 @@ p{
 .hero-cards .card{ width:100%; max-width:none; margin:0; }
 
 .pain-card{
-  background:linear-gradient(170deg, rgba(5,9,20,0.96), rgba(10,16,33,0.92)) !important;
-  border-color:rgba(255,255,255,0.08) !important;
+  background:linear-gradient(180deg, rgba(5,8,18,0.96), rgba(9,14,30,0.92)), radial-gradient(circle at 10% 10%, rgba(79,107,255,0.10), transparent 40%);
+  border-color:rgba(255,255,255,0.14);
+  box-shadow:0 26px 70px rgba(0,0,0,0.40);
 }
 
 /* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
@@ -347,6 +366,16 @@ p{
   border:1px solid rgba(255,255,255,0.10);
   backdrop-filter:blur(8px);
   box-shadow:0 18px 48px rgba(0,0,0,0.28);
+}
+
+.grid.two-col > .card-fit{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:1.12em;
+  line-height:1.8;
 }
 
 /* 2) The CTA big card */
@@ -404,7 +433,7 @@ p{
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
   gap:18px;
   align-items:center;
-  margin-top:8px;
+  margin-top:18px;
 }
 
 .cta-copy{
@@ -480,34 +509,14 @@ footer{
   -webkit-background-clip:text;
   background-clip:text;
 
-  text-shadow:0 0 10px rgba(158,182,255,0.38), 0 0 2px rgba(255,255,255,0.85);
+  text-shadow:0 0 6px rgba(158,182,255,0.22), 0 0 1px rgba(255,255,255,0.65);
   animation:trial-shine 6s ease-in-out infinite;
-}
-
-.trial-gloss::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:2px;
-  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
-  transform:translateX(-120%);
-  opacity:.5;
-  animation:trial-underline 4.5s ease-in-out infinite;
-  pointer-events:none;
 }
 
 @keyframes trial-shine{
   0%   { background-position:0% 50%; }
   50%  { background-position:100% 50%; }
   100% { background-position:0% 50%; }
-}
-
-@keyframes trial-underline{
-  0%   { transform:translateX(-120%); opacity:.28; }
-  45%  { transform:translateX(110%); opacity:.6; }
-  100% { transform:translateX(110%); opacity:.15; }
 }
 
 .list li .trial-gloss{ margin-top:2px; }
