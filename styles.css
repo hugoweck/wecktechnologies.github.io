@@ -384,6 +384,11 @@ p{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
+  margin-top:auto;
+}
+
+.contact-actions .button{
+  width:100%;
 }
 
 /* 2) The CTA big card */
