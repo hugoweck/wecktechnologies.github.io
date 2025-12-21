@@ -11,13 +11,13 @@
     <header class="top-header" aria-label="Huvudnavigation">
       <div class="nav-inner">
         <a class="logo" href="/index.html" aria-label="Weck Technologies startsida">
-          <span class="logo-mark">W</span>
+          <img class="logo-img" src="weck-logo.png" alt="Weck Technologies">
           <span>Weck Technologies</span>
         </a>
         <nav class="nav-links">
           <a href="/index.html#tjanster">Tjänster</a>
-          <a href="/index.html#om-oss">Om oss</a>
           <a href="/integritetspolicy.html">Integritetspolicy</a>
+          <a href="/anvandarvillkor.html">Användarvillkor</a>
           <a href="mailto:contact@wecktechnologies.com">Kontakt</a>
         </nav>
       </div>
@@ -26,11 +26,10 @@
     <main aria-label="Huvudinnehåll" class="section-stack">
       <div class="container">
         <div class="hero" id="tjanster">
-          <div class="badge">AI-receptionist för företag · Weck Technologies</div>
           <h1>Sluta missa kunder när ni inte hinner svara</h1>
           <p>Vi hjälper företag att svara kunder dygnet runt — med en AI-receptionist som guidar, bokar och avlastar personalen.</p>
 
-          <div class="hero-cards">
+          <div class="hero-cards" aria-label="Problem och lösning">
             <article class="card pain-card" aria-label="Det som kostar er pengar">
               <h2>Det som kostar er pengar</h2>
               <ul class="list">
@@ -50,12 +49,8 @@
                   <strong>Vi sätter upp allt och justerar vid behov</strong>
                   – ni behöver inte göra någonting.
                 </li>
-
-                <li>
-                  <span class="trial-gloss">Prova i 14 dagar kostnadsfritt.</span>
-                </li>
-
-                <li><strong>Därefter 2 995 kr/månad.</strong></li>
+                <li class="hero-trial"><span class="trial-gloss">Prova i 14 dagar kostnadsfritt.</span></li>
+                <li class="hero-price"><strong>Lanseringspris för nya kunder!</strong></li>
                 <li><strong>Ingen bindning.</strong> Avsluta när som helst.</li>
                 <li>
                   <strong>Fungerar med er nuvarande hemsida</strong>
@@ -79,28 +74,41 @@
             </ul>
           </article>
 
-          <article class="card">
-            <h2>Vem passar det för?</h2>
-            <ul class="list">
-              <li>Små och medelstora företag</li>
-              <li>Företag som tappar kunder kvällar & helger</li>
-              <li>Företag som vill öka leads</li>
-              <li>Företag som vill avlasta kundservice</li>
-            </ul>
-          </article>
+          <div class="stack">
+            <article class="card">
+              <h2>Vem passar det för?</h2>
+              <ul class="list">
+                <li>Små och medelstora företag</li>
+                <li>Företag som tappar kunder kvällar & helger</li>
+                <li>Företag som vill öka leads</li>
+                <li>Företag som vill avlasta kundservice</li>
+              </ul>
+            </article>
+
+            <article class="card contact-card">
+              <h2>Kontakta oss</h2>
+              <p>Mejla oss eller boka ett samtal om ni har frågor eller vill komma igång.</p>
+              <div class="contact-actions">
+                <a class="button primary" href="mailto:kontakt@wecktechnologies.com">Frågor</a>
+                <a class="button price-button" href="https://calendar.app.google/mpco3ziiUCWyGouX9">Boka 15 min samtal</a>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section class="card cta">
           <div class="cta-copy">
             <h2>Prova kostnadsfritt i 14 dagar</h2>
             <p>Mejla oss så sätter vi upp allt och gör er live samma dag.</p>
-            <a class="button primary" href="mailto:contact@wecktechnologies.com">
-              Kontakta oss: contact@wecktechnologies.com
+            <a class="button primary trial-button" href="mailto:contact@wecktechnologies.com">
+              Prova kostnadsfritt i 14 dagar
             </a>
           </div>
           <div id="om-oss">
             <div class="label">Om Weck Technologies</div>
-            <p>Vi utvecklar praktiska AI-lösningar för företag.</p>
+            <p>Weck Technologies är ett nystartat företag som hjälper företag att använda AI på ett praktiskt och enkelt sätt.</p>
+            <p>Vårt fokus är att automatisera kunddialog och minska tappade förfrågningar – utan krångliga system eller långa implementationer.</p>
+            <p>Vi bygger lösningar som fungerar direkt i befintliga hemsidor och anpassas efter varje verksamhet.</p>
           </div>
         </section>
       </div>
@@ -110,7 +118,7 @@
       <div class="footer-content">
         <span>© <span id="year"></span> Weck Technologies</span>
         <a href="/integritetspolicy.html">Integritetspolicy</a>
-        <a href="#om-oss">Om oss</a>
+        <a href="/anvandarvillkor.html">Användarvillkor</a>
         <a href="mailto:contact@wecktechnologies.com">Kontakt</a>
       </div>
     </footer>
@@ -119,5 +127,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="https://www.buildmyagent.io/widget/69459a678e2cd71269963057/widget-professional.js?widgetId=69459a678e2cd71269963057"></script>
 </body>
 </html>
