@@ -386,7 +386,7 @@ p{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:auto;
+  margin-top:0;
 }
 
 .contact-actions .button{
