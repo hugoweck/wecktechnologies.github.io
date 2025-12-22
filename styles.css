@@ -250,9 +250,9 @@ p{
   outline:none;
 }
 .button.primary{
-  background:#0da3c7;
+  background:#1b76a4;
   border-color:transparent;
-  color:#0b1221;
+  color:#ffffff;
   box-shadow:0 10px 24px rgba(17,24,39,0.18), 0 1px 0 rgba(255,255,255,0.18) inset;
 }
 
@@ -394,27 +394,27 @@ p{
 }
 
 .trial-button{
-  background:#0bb3d9;
-  border-color:#0bb3d9;
-  color:#0b1221;
+  background:#43b9b7;
+  border-color:#43b9b7;
+  color:#ffffff;
 }
 
 .trial-button:hover,
 .trial-button:focus-visible{
-  background:#0aa4c7;
-  border-color:#0aa4c7;
+  background:#379f9d;
+  border-color:#379f9d;
 }
 
 .price-button{
-  background:#22c9bc;
-  border-color:#22c9bc;
-  color:#0b1221;
+  background:#43b9b7;
+  border-color:#43b9b7;
+  color:#ffffff;
 }
 
 .price-button:hover,
 .price-button:focus-visible{
-  background:#1bb0a5;
-  border-color:#1bb0a5;
+  background:#379f9d;
+  border-color:#379f9d;
 }
 
 /* 2) The CTA big card */
