@@ -131,8 +131,25 @@ a:hover,a:focus-visible{
   border:1px solid transparent;
 }
 
+.nav-links .button{
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
+  background:transparent;
+  box-shadow:none;
+  font-weight:700;
+}
+
 .nav-links a:hover,
 .nav-links a:focus-visible{
+  border-color:rgba(79,107,255,.25);
+  background:rgba(79,107,255,.06);
+}
+
+.nav-links .button:hover,
+.nav-links .button:focus-visible{
+  transform:none;
+  box-shadow:none;
   border-color:rgba(79,107,255,.25);
   background:rgba(79,107,255,.06);
 }
@@ -518,11 +535,34 @@ footer{
 }
 
 @media (max-width: 640px){
-  .nav-inner{ padding:12px 18px; }
+  .top-header{
+    height:auto;
+  }
+
+  .nav-inner{
+    padding:12px 18px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .logo{
+    flex:1 1 100%;
+    justify-content:center;
+  }
 
   .nav-inner nav{
     gap:12px;
     flex-wrap:wrap;
+    justify-content:center;
+    width:100%;
+  }
+
+  .nav-links{
+    row-gap:8px;
+  }
+
+  .nav-links a{
+    white-space:nowrap;
   }
 
   .container{ padding:24px 18px 40px; }
