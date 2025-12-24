@@ -29,8 +29,11 @@ html,body{
   line-height:1.75;
 }
 html.force-visible body,
+body.force-visible{
+  opacity:1 !important;
+  visibility:visible !important;
+}
 html.force-visible .site,
-body.force-visible,
 body.force-visible .site{
   opacity:1 !important;
   visibility:visible !important;
@@ -60,7 +63,7 @@ a:hover,a:focus-visible{
 /* Layout container */
 .container{
   width:100%;
-  max-width:1100px;
+  max-width:min(1100px, 100vw);
   margin:0 auto;
   padding:44px 24px 72px;
 }
