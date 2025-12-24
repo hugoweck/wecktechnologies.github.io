@@ -19,11 +19,16 @@
           <img class="logo-img" src="weck-logo.png" alt="Weck Technologies">
           <span>Weck Technologies</span>
         </a>
-        <nav class="nav-links">
-          <a href="/index.html#tjanster">Tjänster</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Öppna meny</span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+        <nav class="nav-links" id="primary-navigation">
           <a href="/integritetspolicy.html">Integritetspolicy</a>
           <a href="/anvandarvillkor.html">Användarvillkor</a>
-          <a class="button" href="/index.html#kontakt">Kontakta oss</a>
+          <a href="/index.html#kontakt">Kontakta oss</a>
         </nav>
       </div>
     </header>
@@ -138,5 +143,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="Script.js"></script>
 </body>
 </html>

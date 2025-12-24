@@ -17,10 +17,16 @@
           <img class="logo-img" src="weck-logo.png" alt="Weck Technologies">
           <span>Weck Technologies</span>
         </a>
-        <nav class="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Öppna meny</span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+        <nav class="nav-links" id="primary-navigation">
           <a href="/integritetspolicy.html">Integritetspolicy</a>
           <a href="/anvandarvillkor.html">Användarvillkor</a>
-          <a class="button" href="#kontakt">Kontakta oss</a>
+          <a href="#kontakt">Kontakta oss</a>
         </nav>
       </div>
     </header>
@@ -31,34 +37,37 @@
           <h1>Undvik att missa kunder när ni inte hinner svara</h1>
           <p>Vi hjälper företag att svara kunder dygnet runt — med en AI-receptionist som guidar, bokar och avlastar personalen.</p>
 
+          <div class="trust-chips" aria-label="Trygghetsargument">
+            <span class="chip">Svar inom 24h</span>
+            <span class="chip">Ingen bindning</span>
+            <span class="chip">B2B • DPA/GDPR</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:Kontakt@weck.se?subject=Prova%20i%2014%20dagar&body=Hej,%0D%0A%0D%0AVi%20vill%20testa%20er%20AI-receptionist%20i%2014%20dagar.%0D%0A%0D%0ATelefonnummer:%0D%0AF%C3%B6retag:%0D%0ADin%20roll:%0D%0AHemsida:">
+              Prova kostnadsfritt i 14 dagar
+            </a>
+            <a class="button ghost" href="https://calendar.app.google/mpco3ziiUCWyGouX9">Boka 15 min samtal</a>
+          </div>
+
           <div class="hero-cards" aria-label="Problem och lösning">
             <article class="card pain-card" aria-label="Det som kostar er pengar">
               <h2>Det som kostar er pengar</h2>
               <ul class="list">
-                <li>De flesta kunder lämnar om de inte får svar direkt.</li>
-                <li>Det betyder tappade bokningar och leads — även när ni redan har trafiken.</li>
-                <li>Kvällar, helger och hög belastning blir era dyraste timmar.</li>
-                <li>Vi hjälper er att fånga kunderna innan de försvinner.</li>
+                <li>Besökare lämnar när svar dröjer mer än ett par minuter.</li>
+                <li>Frågor kvällar, helger och vid hög belastning blir ofta obesvarade.</li>
+                <li>Det leder till tappade leads och bokningar trots att trafiken finns.</li>
+                <li>AI-receptionisten fångar kunderna innan de försvinner.</li>
               </ul>
             </article>
 
             <article class="card solution-card" aria-label="Så löser vi ert problem">
               <h2>Så löser vi ert problem</h2>
               <ul class="list">
-                <li><strong>Gör det ni redan gör – automatiskt.</strong></li>
-                <li><strong>Live på er hemsida samma dag.</strong></li>
-                <li class="hero-highlight">
-                  <strong>Vi sätter upp allt och justerar vid behov</strong>
-                  – ni behöver inte göra någonting.
-                </li>
-                <li class="hero-trial"><span class="trial-gloss">Prova i 14 dagar kostnadsfritt.</span></li>
-                <li class="hero-price"><strong>Lanseringspris för nya kunder!</strong></li>
-                <li><strong>Därefter 2 995 kr/månad.</strong></li>
+                <li><strong>Live samma dag.</strong> Vi installerar åt er och finjusterar löpande.</li>
+                <li><strong>Svarar, guidar och bokar dygnet runt</strong> med era rutiner.</li>
+                <li class="hero-highlight"><strong>Prova 14 dagar kostnadsfritt</strong> – därefter 2 995 kr/månad.</li>
                 <li><strong>Ingen bindning.</strong> Avsluta när som helst.</li>
-                <li>
-                  <strong>Fungerar med er nuvarande hemsida</strong>
-                  – inga nya verktyg att lära sig.
-                </li>
               </ul>
             </article>
           </div>
@@ -68,12 +77,9 @@
           <article class="card">
             <h2>Så fungerar det</h2>
             <ul class="list">
-              <li><strong>Behöver vi göra något själva?</strong> nej</li>
-              <li><strong>Hur snabbt är vi igång?</strong> Samma dag.</li>
-              <li><strong>Fungerar det med vår hemsida?</strong> Ja.</li>
-              <li><strong>Några nya verktyg?</strong> Nej.</li>
-              <li><strong>Efter testperioden?</strong> lanseringspris eller avsluta.</li>
-              <li><strong>Bindningstid?</strong> Nej.</li>
+              <li><strong>Vi installerar på er hemsida</strong> utan att störa befintliga system.</li>
+              <li><strong>Vi anpassar efter er verksamhet</strong> med era svar och rutiner.</li>
+              <li><strong>Live samma dag</strong> med uppföljning under testperioden.</li>
             </ul>
           </article>
 
@@ -81,19 +87,19 @@
             <article class="card">
               <h2>Vem passar det för?</h2>
               <ul class="list">
-                <li>Små och medelstora företag</li>
-                <li>Företag som tappar kunder kvällar & helger</li>
-                <li>Företag som vill öka leads</li>
-                <li>Företag som vill avlasta kundservice</li>
+                <li>Små och medelstora B2B-företag</li>
+                <li>Team som tappar kunder kvällar och helger</li>
+                <li>Företag som vill öka bokade möten</li>
+                <li>Verksamheter som vill avlasta support</li>
               </ul>
             </article>
 
             <article class="card contact-card" id="kontakt">
               <h2>Kontakta oss</h2>
-              <p>Mejla oss eller boka ett samtal om ni har frågor eller vill komma igång.</p>
+              <p>Maila oss eller boka ett kort samtal så hjälper vi er komma igång.</p>
               <div class="contact-actions">
-                <a class="button primary" href="mailto:Kontakt@weck.se?subject=Fr%C3%A5ga&body=Hej,%0D%0A%0D%0A%0D%0ATelefonnummer:%0D%0AF%C3%B6retag:%0D%0ADin%20roll:%0D%0AHemsida:">Frågor</a>
-                <a class="button price-button" href="https://calendar.app.google/mpco3ziiUCWyGouX9">Boka 15 min samtal</a>
+                <a class="button ghost" href="https://calendar.app.google/mpco3ziiUCWyGouX9">Boka 15 min samtal</a>
+                <a class="text-link" href="mailto:Kontakt@weck.se?subject=Fr%C3%A5ga&body=Hej,%0D%0A%0D%0A%0D%0ATelefonnummer:%0D%0AF%C3%B6retag:%0D%0ADin%20roll:%0D%0AHemsida:">Maila oss</a>
               </div>
             </article>
           </div>
@@ -102,8 +108,8 @@
         <section class="card cta">
           <div class="cta-copy">
             <h2>Prova kostnadsfritt i 14 dagar</h2>
-            <p>Mejla oss så sätter vi upp allt och gör er live samma dag vi ser eran förfrågan.</p>
-            <a class="button trial-button" href="mailto:Kontakt@weck.se?subject=Prova%20i%2014%20dagar&body=Hej,%0D%0A%0D%0AVi%20vill%20testa%20er%20AI-receptionist%20i%2014%20dagar.%0D%0A%0D%0ATelefonnummer:%0D%0AF%C3%B6retag:%0D%0ADin%20roll:%0D%0AHemsida:">
+            <p>Mejla oss så sätter vi upp allt och gör er live samma dag vi ser er förfrågan.</p>
+            <a class="button ghost" href="mailto:Kontakt@weck.se?subject=Prova%20i%2014%20dagar&body=Hej,%0D%0A%0D%0AVi%20vill%20testa%20er%20AI-receptionist%20i%2014%20dagar.%0D%0A%0D%0ATelefonnummer:%0D%0AF%C3%B6retag:%0D%0ADin%20roll:%0D%0AHemsida:">
               Prova kostnadsfritt i 14 dagar
             </a>
           </div>
@@ -129,6 +135,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="Script.js"></script>
   <script src="https://www.buildmyagent.io/widget/69459a678e2cd71269963057/widget-professional.js?widgetId=69459a678e2cd71269963057"></script>
 </body>
 </html>
