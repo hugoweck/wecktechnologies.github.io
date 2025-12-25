@@ -45,9 +45,23 @@ a:hover,a:focus-visible{
   display:flex;
   flex-direction:column;
   position:relative;
-  background:linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-2) 55%, var(--page-bg) 100%);
   padding-bottom:56px;
 }
+
+main{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background-image:
+    linear-gradient(140deg, rgba(6,11,24,0.96) 0%, rgba(6,10,20,0.96) 36%, rgba(43,74,150,0.68) 70%, rgba(8,12,26,0.98) 100%),
+    radial-gradient(circle at 18% 18%, rgba(124,155,255,0.18), transparent 34%),
+    url('dark-wave.png');
+  background-size:cover, auto, cover;
+  background-repeat:no-repeat;
+  background-position:center, center, center;
+}
+
+main > *{ position:relative; z-index:1; }
 
 /* Layout container */
 .container{
@@ -210,12 +224,40 @@ h2 + p{ margin-top:6px; }
 
 /* Cards (light default) */
 .card{
-  background:#ffffff;
-  border:1px solid var(--border);
-  border-radius:18px;
+  position:relative;
+  overflow:hidden;
+  background:rgba(10,16,32,0.92);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;
   padding:28px 26px;
-  box-shadow:0 18px 40px rgba(17,24,39,0.10);
-  color:var(--text);
+  box-shadow:0 22px 55px rgba(0,0,0,0.34);
+  color:var(--dark-text);
+  backdrop-filter:blur(10px);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background-image:
+    linear-gradient(150deg, rgba(6,11,24,0.90) 0%, rgba(6,10,20,0.88) 55%, rgba(43,74,150,0.52) 100%),
+    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.22), transparent 36%),
+    url('dark-wave.png');
+  background-size:cover, auto, cover;
+  background-repeat:no-repeat;
+  background-position:center, center, center;
+  opacity:0.82;
+  z-index:0;
+}
+
+.card > *{ position:relative; z-index:1; }
+
+.card h2{ color:#f3f6ff; }
+
+.card p,
+.card li{ color:#dbe6ff; }
+
+.card strong{ color:#ffffff; }
 }
 
 /* Grid sections */
@@ -276,10 +318,11 @@ h2 + p{ margin-top:6px; }
   align-items:center;
   gap:6px;
   padding:9px 12px;
-  background:rgba(79,107,255,0.10);
-  color:#1b2a60;
+  background:rgba(255,255,255,0.10);
+  color:#eef2ff;
   border-radius:10px;
   font-weight:800;
+  border:1px solid rgba(255,255,255,0.16);
 }
 
 /* Buttons */
@@ -345,14 +388,7 @@ h2 + p{ margin-top:6px; }
   border:1px solid rgba(255,255,255,0.10);
   text-align:center;
 
-  background-image:
-    linear-gradient(140deg, rgba(6,11,24,0.94) 0%, rgba(6,10,20,0.94) 36%, rgba(43,74,150,0.72) 70%, rgba(8,12,26,0.96) 100%),
-    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.28), transparent 34%),
-    url('dark-wave.png');
-  background-size:cover, auto, cover;
-  background-repeat:no-repeat, no-repeat, no-repeat;
-  background-position:center, center, center;
-  background-attachment:scroll, scroll, fixed;
+  background:linear-gradient(160deg, rgba(9,14,30,0.85), rgba(6,10,20,0.82));
 
   overflow:hidden;
   box-shadow:0 28px 70px rgba(0,0,0,.28);
@@ -413,13 +449,10 @@ h2 + p{ margin-top:6px; }
 }
 
 /* Hero cards */
+
 .hero .card{
   text-align:left;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.35);
+  box-shadow:0 24px 60px rgba(0,0,0,0.42);
 }
 
 .hero .card p,
@@ -453,22 +486,16 @@ h2 + p{ margin-top:6px; }
 .hero-cards .card{ width:100%; max-width:none; margin:0; }
 
 .pain-card{
-  background:linear-gradient(180deg, rgba(5,8,18,0.96), rgba(9,14,30,0.92)), radial-gradient(circle at 10% 10%, rgba(79,107,255,0.10), transparent 40%);
-  border-color:rgba(255,255,255,0.14);
+  border-color:rgba(255,255,255,0.18);
   box-shadow:0 26px 70px rgba(0,0,0,0.40);
 }
 
-/* ===== MAKE THE 3 LOWER BOXES MATCH THE HERO STYLE ===== */
-/* 1) The two cards in the two-col grid (FAQ + target) */
-.grid.two-col > .card,
-.grid.two-col .stack .card{
-  position:relative;
-  overflow:hidden;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.28);
+.pain-card::before{
+  opacity:0.94;
+  background-image:
+    linear-gradient(175deg, rgba(5,8,18,0.96), rgba(9,14,30,0.92)),
+    radial-gradient(circle at 10% 10%, rgba(79,107,255,0.16), transparent 46%),
+    url('dark-wave.png');
 }
 
 .stack{
@@ -521,58 +548,6 @@ h2 + p{ margin-top:6px; }
 }
 
 /* 2) The CTA big card */
-.card.cta{
-  position:relative;
-  overflow:hidden;
-  background:rgba(12,19,37,0.88);
-  color:var(--dark-text);
-  border:1px solid rgba(255,255,255,0.10);
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 48px rgba(0,0,0,0.28);
-}
-
-/* Add the same “cool background” INSIDE these cards */
-.grid.two-col > .card::before,
-.grid.two-col .stack .card::before,
-.card.cta::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(140deg, rgba(6,11,24,0.92) 0%, rgba(6,10,20,0.92) 36%, rgba(43,74,150,0.62) 70%, rgba(8,12,26,0.94) 100%),
-    radial-gradient(circle at 25% 20%, rgba(124,155,255,0.22), transparent 34%),
-    url('dark-wave.png');
-  background-size:cover, auto, cover;
-  background-repeat:no-repeat, no-repeat, no-repeat;
-  background-position:center, center, center;
-  opacity:.85;
-  z-index:0;
-}
-
-/* Keep text above background */
-.grid.two-col > .card > *,
-.grid.two-col .stack .card > *,
-.card.cta > *{
-  position:relative;
-  z-index:1;
-}
-
-/* Text colors inside dark lower cards */
-.grid.two-col > .card p,
-.grid.two-col > .card li,
-.grid.two-col .stack .card p,
-.grid.two-col .stack .card li,
-.card.cta p,
-.card.cta li{
-  color:#dbe6ff;
-}
-
-/* Make the little label chip work on dark card */
-.card.cta .label{
-  background:rgba(255,255,255,0.12);
-  color:#eef2ff;
-}
-
 /* CTA layout */
 .cta{
   display:grid;
