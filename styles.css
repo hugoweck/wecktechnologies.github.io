@@ -271,12 +271,26 @@ h2 + p{ margin-top:6px; }
 .card li{ color:#dbe6ff; }
 
 .card strong{ color:#ffffff; }
-}
 
 /* Grid sections */
 .grid{
   display:grid;
   gap:var(--card-gap);
+}
+
+.info-section{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--card-gap);
+  margin-top:var(--card-gap);
+}
+
+.info-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  column-gap:var(--column-gap);
+  row-gap:var(--card-gap);
+  align-items:start;
 }
 
 .two-col{
@@ -619,6 +633,12 @@ footer{
   .hero-cards{ grid-template-columns:1fr; }
 
   .grid.two-col{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .info-card-grid{
     grid-template-columns:1fr;
   }
 }
