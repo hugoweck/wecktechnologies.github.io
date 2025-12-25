@@ -24,6 +24,52 @@ document.addEventListener("DOMContentLoaded", () => {
     syncNavState();
   }
 
+  const loadWidgetSafely = () => {
+    const widgetUrl =
+      "https://www.buildmyagent.io/widget/69459a678e2cd71269963057/widget-professional.js?widgetId=69459a678e2cd71269963057";
+    if (!document.body?.dataset?.enableWidget) return;
+
+    const originalWrite = document.write;
+    const originalWriteln = document.writeln;
+    const originalOpen = document.open;
+
+    const restoreDocumentStream = () => {
+      document.write = originalWrite;
+      document.writeln = originalWriteln;
+      document.open = originalOpen;
+    };
+
+    const script = document.createElement("script");
+    script.src = widgetUrl;
+    script.async = true;
+
+    const stopSafetyNet = window.setTimeout(() => {
+      restoreDocumentStream();
+    }, 4000);
+
+    const handleWidgetComplete = () => {
+      restoreDocumentStream();
+      window.clearTimeout(stopSafetyNet);
+      document.documentElement.classList.add("force-visible");
+      document.body.classList.add("force-visible");
+    };
+
+    const blockWrite = (reason) => {
+      return (...args) => {
+        console.warn(`Blocked document.${reason} from third-party widget`, args);
+      };
+    };
+
+    document.write = blockWrite("write");
+    document.writeln = blockWrite("writeln");
+    document.open = blockWrite("open");
+
+    script.addEventListener("load", handleWidgetComplete, { once: true });
+    script.addEventListener("error", handleWidgetComplete, { once: true });
+
+    document.body.appendChild(script);
+  };
+
   // Delay proactive chat popups to reduce interruption
   const PROACTIVE_DELAY = 12000;
   let proactiveTimeout;
@@ -50,4 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.clearTimeout(proactiveTimeout);
     observer.disconnect();
   });
+
+  window.addEventListener("load", loadWidgetSafely, { once: true });
 });
