@@ -271,6 +271,7 @@ h2 + p{ margin-top:6px; }
 .card li{ color:#dbe6ff; }
 
 .card strong{ color:#ffffff; }
+.solution-card p + p{ margin-top:18px; }
 
 /* Grid sections */
 .grid{
