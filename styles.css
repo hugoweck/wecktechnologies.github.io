@@ -520,6 +520,13 @@ h2 + p{ margin-top:6px; }
   justify-content:center;
   gap:16px;
 }
+.hero-undertext{
+  color:#9db2ff;
+  margin:12px auto 0;
+  max-width:680px;
+  text-align:center;
+  line-height:1.5;
+}
 
 /* Hero cards */
 
