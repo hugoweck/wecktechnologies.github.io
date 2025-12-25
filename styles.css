@@ -1,7 +1,9 @@
 :root{
-  /* Light page (professional frame) */
-  --page-bg:#f4f6fb;
-  --page-bg-2:#ffffff;
+  /* Global background */
+  --wave-bg:
+    linear-gradient(140deg, rgba(6,11,24,0.96) 0%, rgba(6,10,20,0.96) 36%, rgba(43,74,150,0.68) 70%, rgba(8,12,26,0.98) 100%),
+    radial-gradient(circle at 18% 18%, rgba(124,155,255,0.18), transparent 34%),
+    url('dark-wave.png');
 
   --section-gap:clamp(44px, 6.5vw, 96px);
   --card-gap:clamp(24px, 5.5vw, 48px);
@@ -27,7 +29,13 @@
 
 html,body{
   margin:0;
-  background:var(--page-bg);
+  min-height:100%;
+  background-color:#060b18;
+  background-image:var(--wave-bg);
+  background-size:cover, auto, cover;
+  background-repeat:no-repeat;
+  background-position:center, center, center;
+  background-attachment:fixed, fixed, fixed;
   color:var(--text);
   font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
   font-size:17px;
@@ -63,10 +71,7 @@ main::before{
   content:"";
   position:fixed;
   inset:0;
-  background-image:
-    linear-gradient(140deg, rgba(6,11,24,0.96) 0%, rgba(6,10,20,0.96) 36%, rgba(43,74,150,0.68) 70%, rgba(8,12,26,0.98) 100%),
-    radial-gradient(circle at 18% 18%, rgba(124,155,255,0.18), transparent 34%),
-    url('dark-wave.png');
+  background-image:var(--wave-bg);
   background-size:cover, auto, cover;
   background-repeat:no-repeat;
   background-position:center, center, center;
@@ -633,10 +638,11 @@ h2 + p{ margin-top:6px; }
 
 /* Footer */
 footer{
-  background:#ffffff;
-  border-top:1px solid var(--border);
-  color:var(--muted);
+  background:rgba(6,10,20,0.92);
+  border-top:1px solid rgba(255,255,255,0.12);
+  color:var(--dark-muted);
   margin-top:auto;
+  box-shadow:0 -12px 30px rgba(0,0,0,0.26);
 }
 
 .footer-content{
@@ -651,12 +657,12 @@ footer{
 }
 
 .footer-content a{
-  color:var(--muted);
+  color:var(--dark-text);
   font-weight:800;
 }
 .footer-content a:hover,
 .footer-content a:focus-visible{
-  color:var(--text);
+  color:#ffffff;
 }
 
 /* Responsive */
