@@ -28,17 +28,6 @@ html,body{
   font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
   line-height:1.75;
 }
-html.force-visible body,
-body.force-visible{
-  opacity:1 !important;
-  visibility:visible !important;
-}
-html.force-visible .site,
-body.force-visible .site{
-  opacity:1 !important;
-  visibility:visible !important;
-  display:flex !important;
-}
 
 a{
   color:var(--accent);
@@ -624,36 +613,6 @@ footer{
 .footer-content a:hover,
 .footer-content a:focus-visible{
   color:var(--text);
-}
-
-/* Chat widget tempering */
-body.suppress-proactive [class*="proactive" i],
-body.suppress-proactive [data-proactive],
-body.suppress-proactive [id*="proactive" i]{
-  display:none !important;
-}
-iframe[src*="buildmyagent"]{
-  position:fixed;
-  inset:auto 18px 18px auto;
-  max-width:min(420px,92vw);
-  max-height:min(620px,90vh);
-  width:96px;
-  height:96px;
-  border:0;
-  border-radius:18px;
-  margin:0;
-  background:transparent;
-  box-shadow:0 18px 38px rgba(0,0,0,0.28);
-  z-index:50;
-  pointer-events:auto;
-}
-iframe[src*="buildmyagent"][style*="width: 100%" i][style*="height: 100%" i],
-iframe[src*="buildmyagent"][style*="position: fixed" i][style*="top: 0" i][style*="left: 0" i]{
-  inset:auto 18px 18px auto !important;
-  width:min(420px,92vw) !important;
-  height:min(620px,90vh) !important;
-  border-radius:18px !important;
-  box-shadow:0 20px 45px rgba(0,0,0,0.32);
 }
 
 /* Responsive */
