@@ -272,6 +272,7 @@ h2 + p{ margin-top:6px; }
 
 .card strong{ color:#ffffff; }
 .solution-card p + p{ margin-top:18px; }
+.pain-card p + p{ margin-top:18px; }
 
 /* Grid sections */
 .grid{
