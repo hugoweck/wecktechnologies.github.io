@@ -8,45 +8,8 @@
   <link rel="icon" href="weck-logo favicon.png" sizes="470x470">
   <link rel="apple-touch-icon" href="weck-logo favicon.png">
   <link rel="stylesheet" href="styles.css?v=2">
-  <style>
-    /* Keep the page visible even if external scripts fail */
-    html, body {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-  </style>
 </head>
-<body data-enable-widget="true">
-  <script>
-    (() => {
-      const forceVisible = () => {
-        document.documentElement.classList.add("force-visible");
-        document.body.classList.add("force-visible");
-        document.documentElement.style.opacity = "1";
-        document.documentElement.style.visibility = "visible";
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-
-        document
-          .querySelectorAll('[data-loading], [data-overlay], .page-overlay')
-          .forEach((node) => {
-            const rect = node.getBoundingClientRect();
-            if (rect.width >= window.innerWidth * 0.9 && rect.height >= window.innerHeight * 0.9) {
-              node.remove();
-            }
-          });
-      };
-
-      if (document.readyState === "complete" || document.readyState === "interactive") {
-        forceVisible();
-      } else {
-        document.addEventListener("DOMContentLoaded", forceVisible, { once: true });
-      }
-
-      window.addEventListener("load", forceVisible, { once: true });
-      window.setTimeout(forceVisible, 1200);
-    })();
-  </script>
+<body>
   <div class="site">
     <header class="top-header" aria-label="Huvudnavigation">
       <div class="nav-inner">
