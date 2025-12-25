@@ -3,8 +3,8 @@
   --page-bg:#f4f6fb;
   --page-bg-2:#ffffff;
 
-  --section-gap:36px;
-  --card-gap:24px;
+  --section-gap:clamp(32px, 6vw, 72px);
+  --card-gap:clamp(20px, 4.8vw, 40px);
   --column-gap:30px;
 
   --text:#0b1221;
@@ -500,7 +500,7 @@ h2 + p{ margin-top:6px; }
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:var(--card-gap);
   align-items:start;
-  margin-top:12px;
+  margin-top:clamp(12px, 2.6vw, 26px);
 }
 
 .hero-cards .card{ width:100%; max-width:none; margin:0; }
