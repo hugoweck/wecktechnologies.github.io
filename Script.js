@@ -25,10 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentY = window.scrollY;
     const headerHeight = header.offsetHeight || 0;
     const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
-    const withinHero = hero ? heroBottom > headerHeight + 12 : currentY < headerHeight;
-
-    header.classList.toggle("is-overlay", withinHero);
-    header.classList.toggle("is-solid", !withinHero);
+    header.classList.add("is-overlay");
+    header.classList.remove("is-solid");
 
     const isMobile = window.innerWidth <= 640;
     const navOpen = isMobile && nav && !nav.classList.contains("is-collapsed");
