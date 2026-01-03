@@ -520,23 +520,12 @@ h2 + p{ margin-top:6px; }
   justify-content:center;
   gap:16px;
 }
-.hero-tags{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-}
-.chip{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:9px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.14);
-  background:rgba(255,255,255,0.06);
-  color:#dbe6ff;
-  font-weight:700;
-  box-shadow:0 10px 30px rgba(0,0,0,0.16);
+.hero-undertext{
+  color:#9db2ff;
+  margin:12px auto 0;
+  max-width:680px;
+  text-align:center;
+  line-height:1.5;
 }
 
 /* Hero cards */
@@ -601,27 +590,6 @@ h2 + p{ margin-top:6px; }
   flex:1;
   gap:16px;
   grid-column:1 / -1;
-}
-
-.pill-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:grid;
-  gap:14px;
-}
-.pill-list li{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  align-items:center;
-  gap:10px;
-  padding:12px 14px;
-  border-radius:14px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.14);
-}
-.pill-list span{
-  font-size:18px;
 }
 
 .contact-actions{
@@ -768,36 +736,6 @@ footer{
     background-attachment:scroll, scroll, scroll;
     background-position:center top;
   }
-}
-
-/* Steps */
-.step-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:16px;
-  margin-top:8px;
-}
-.step{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:12px;
-  align-items:center;
-  padding:12px 14px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.12);
-}
-.step-icon{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg, rgba(79,107,255,0.28), rgba(79,107,255,0.12));
-  border:1px solid rgba(255,255,255,0.18);
-  color:#f5f7ff;
-  font-weight:900;
 }
 
 /* ===== PREMIUM TRIAL HIGHLIGHT ===== */
